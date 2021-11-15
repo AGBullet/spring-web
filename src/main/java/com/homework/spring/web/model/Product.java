@@ -1,12 +1,15 @@
 package com.homework.spring.web.model;
 
 public class Product {
+
     private Long id;
     private String title;
     private Long cost;
 
+
     public Product() {
     }
+
 
     public Product(Long id, String title, Long cost) {
         this.id = id;
