@@ -19,7 +19,8 @@ public class ProductRepo {
                 new Product(2L, "Bread",100L),
                 new Product(3L, "Surge",102L),
                 new Product(4L, "Bear",103L),
-                new Product(5L, "Vino",104L)
+                new Product(5L, "Vino",104L),
+                new Product(6L, "Egg",105L)
 
         ));
 
