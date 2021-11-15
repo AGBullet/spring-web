@@ -25,10 +25,13 @@ public class MainController {
         return "products_page";
     }
 
+
+
     @GetMapping("/products/{id}")
     public String showProductPage(Model model, @PathVariable Long id) {
        Product product = productRepo.findById(id);
         model.addAttribute("product", product);
         return "products_info_page";
     }
+
 }
