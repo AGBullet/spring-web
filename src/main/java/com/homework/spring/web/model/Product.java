@@ -17,6 +17,7 @@ public class Product {
         this.cost = cost;
     }
 
+
     public Long getId() {
         return id;
     }
