@@ -2,36 +2,31 @@ package com.homework.spring.web.controllers;
 
 import com.homework.spring.web.model.Product;
 import com.homework.spring.web.repo.ProductRepo;
+import com.homework.spring.web.servies.PruductService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class MainController {
-    private ProductRepo productRepo;
-    public MainController(ProductRepo productRepo) {
-        this.productRepo = productRepo;
+    private ProductRepo repo ;
+
+    public MainController(ProductRepo repo) {
+        this.repo = repo;
     }
-
-
-
-
     @GetMapping("/products")
-    public String showProductPage(Model model) {
-        model.addAttribute("products", productRepo.getAllProducts());
-        return "products_page";
+    public String showProductsPage(Model model) {
+        model.addAttribute("product", repo.getAllProducts());
+        return "product_page";
     }
-
-
 
     @GetMapping("/products/{id}")
     public String showProductPage(Model model, @PathVariable Long id) {
-       Product product = productRepo.findById(id);
-        model.addAttribute("product", product);
-        return "products_info_page";
+        Product student = repo.findById(id);
+        model.addAttribute("product", student);
+        return "product_info_page";
     }
 
 }

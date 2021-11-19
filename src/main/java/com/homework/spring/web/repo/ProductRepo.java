@@ -37,4 +37,7 @@ public class ProductRepo {
                 .findFirst()
                 .orElseThrow(() -> new RuntimeException("Product not found"));
     }
+    public  void deleteById(Long id){
+        products.removeIf(product -> product.getId().equals(id));
+    }
 }
